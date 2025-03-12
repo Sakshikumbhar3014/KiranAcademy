@@ -1,0 +1,12 @@
+package Assigment;
+
+public class Forloop44to22 {
+	
+    public static void main(String[] args) {
+        for (int k = 44; k >= 22; k--) {
+            System.out.println(k);
+        }
+    }
+}
+
+
