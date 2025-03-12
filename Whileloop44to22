@@ -1,0 +1,18 @@
+package Assigment;
+
+public class Whileloop44to22 {
+	
+
+	public class WhileLoop44to22 { 
+	    public static void main(String[] args) {
+	        int K = 44; 
+	        
+	        while (K >= 22) { 
+	            System.out.println(K); 
+	            K--; 
+	        }
+	    }
+	}
+
+
+}
