@@ -1,0 +1,15 @@
+package Assigment;
+
+public class Decrementby3 {
+		    public static void main(String[] args) 
+		    {
+		    	
+	        for (int k = 11; k >= -33; k-= 4)
+	        {
+	            System.out.println(k);
+	        }
+	    }
+	}
+
+
+
