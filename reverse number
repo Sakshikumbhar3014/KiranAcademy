@@ -1,0 +1,33 @@
+package polymoriphism;
+import java.util.Scanner;
+public class Absoludiif {
+	
+		public int reverse(int num) {
+			int rev=0;
+			while(num>0)
+			{
+				int digt=num%10;
+				rev=rev*10+digt;
+				num=num/10;
+			}
+			return rev;
+		}
+		public int differnce(int temp,int res)
+		{
+		int diif=Math.abs(temp=res);
+		return diif;
+		}
+		public static void main(String[] args) {
+			
+		
+		
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the number:");
+		int num=sc.nextInt();
+		int temp=num;
+		Absoludiif a1=new Absoludiif();
+		int res=a1.reverse(num);
+		System.out.println("Reverse: "+res);
+
+}
+}
