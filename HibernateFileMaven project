@@ -1,0 +1,100 @@
+package com.jbk;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class Book {
+private String book_name;
+@Id
+private int  book_id;
+private String book_author;
+private double book_price;
+public String getBook_name() {
+	return book_name;
+}
+public void setBook_name(String book_name) {
+	this.book_name = book_name;
+}
+public int getBook_id() {
+	return book_id;
+}
+public void setBook_id(int book_id) {
+	this.book_id = book_id;
+}
+public String getBook_author() {
+	return book_author;
+}
+public void setBook_author(String book_author) {
+	this.book_author = book_author;
+}
+public double getBook_price() {
+	return book_price;
+}
+public void setBook_price(double book_price) {
+	this.book_price = book_price;
+}
+
+public Book() {
+	// TODO Auto-generated constructor stub
+}
+public Book(String book_name, int book_id, String book_author, double book_price) {
+	super();
+	this.book_name = book_name;
+	this.book_id = book_id;
+	this.book_author = book_author;
+	this.book_price = book_price;
+}
+@Override
+public String toString() {
+	return "Book [book_name=" + book_name + ", book_id=" + book_id + ", book_author=" + book_author + ", book_price="
+			+ book_price + "]";
+}
+
+}
+//
+package com.jbk;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+public class HBConfig {
+
+	public static void main(String[] args) 
+	{
+		Configuration cfg=new Configuration().configure();
+		cfg.addAnnotatedClass(Book.class);
+		SessionFactory factory=cfg.buildSessionFactory();
+		Session session=factory.openSession();
+		Book book=session.load(Book.class, 1);
+		System.out.println(book);
+
+	}
+}
+//
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.tka</groupId>
+  <artifactId>Hibernate</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+<dependency>
+<groupId>org.hibernate</groupId>
+<artifactId>hibernate-core</artifactId>
+<version>5.5.0.Final</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
+<dependency>
+<groupId>com.mysql</groupId>
+<artifactId>mysql-connector-j</artifactId>
+<version>8.3.0</version>
+</dependency>
+<dependency>
+<groupId>org.javassist</groupId>
+<artifactId>javassist</artifactId>
+<version>3.25.0-GA</version>
+</dependency>
+</dependencies>
+</project>
+//
+
